@@ -23,8 +23,8 @@ namespace Drips_p2.Pages
         IWebElement emailField => chromeDriver.FindElement(By.Name("email"));
         IWebElement passwordField => chromeDriver.FindElement(By.Name("password"));
         IWebElement passwordConfirmationField => chromeDriver.FindElement(By.Name("password_confirmation"));
-        //login button at bottome of page
-        IWebElement loginButton => chromeDriver.FindElement(By.XPath("//button[@type='submit' and span='Create an Account']"));
+        //create account button at bottome of page
+        IWebElement createAccountButton => chromeDriver.FindElement(By.XPath("//button[@type='submit' and span='Create an Account']"));
 
         //send field values
         public void enterUserInformation(String firstName, String lastName, String email, String password, String passwordConfirm)
@@ -34,6 +34,12 @@ namespace Drips_p2.Pages
             emailField.SendKeys(email);
             passwordField.SendKeys(password);
             passwordConfirmationField.SendKeys(passwordConfirm);//password fields should be the same
+        }
+
+        //click create account button
+        public void clickCreateAccountButton()
+        {
+            createAccountButton.Click();
         }
 
     }
