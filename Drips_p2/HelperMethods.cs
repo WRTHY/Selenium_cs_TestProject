@@ -21,27 +21,13 @@ namespace Drips_p2
 
         public void helper_CreateAccountSteps(ChromeDriver chromeDriver, String firstName, String lastName, String email, String password)
         {
+            HomePage homePage = new HomePage(chromeDriver);
+            CreateUserPage createUserPage = new CreateUserPage(chromeDriver);
+
             //Nav to login page
-            IWebElement createAccountButton = chromeDriver.FindElement(By.LinkText("Create an Account"));
-            createAccountButton.Click();
-
-            //find fields
-            IWebElement firstNameField = chromeDriver.FindElement(By.Name("firstname"));
-            IWebElement lastNameField = chromeDriver.FindElement(By.Name("lastname"));
-            IWebElement emailField = chromeDriver.FindElement(By.Name("email"));
-            IWebElement passwordField = chromeDriver.FindElement(By.Name("password"));
-            IWebElement passwordConfirmationField = chromeDriver.FindElement(By.Name("password_confirmation"));
-
-            //send field values
-            firstNameField.SendKeys(firstName);
-            lastNameField.SendKeys(lastName);
-            emailField.SendKeys(email);
-            passwordField.SendKeys(password);
-            passwordConfirmationField.SendKeys(password);//password fields should be the same
-
-            //Hit create account button
-            IWebElement loginButton = chromeDriver.FindElement(By.XPath("//button[@type='submit' and span='Create an Account']"));
-            loginButton.Click();
+            homePage.clickSignIn();
+            createUserPage.enterUserInformation(firstName, lastName, email, password, password);//same password for both boxes
+            createUserPage.clickCreateAccountButton();
         }
 
         public void helper_LoginSteps(ChromeDriver chromeDriver, String username, String password)
