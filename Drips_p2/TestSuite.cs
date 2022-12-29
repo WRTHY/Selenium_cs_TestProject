@@ -51,7 +51,6 @@ namespace Drips_p2
             Assert.True(errorMessage.Displayed);
         }
 
-
         [Test]
         public void LoginWithUsernameAndPassword()
         {
@@ -62,7 +61,6 @@ namespace Drips_p2
             var captchaMessage = chromeDriver.FindElement(By.Name("captcha[user_login]"));
             Assert.True(captchaMessage.Displayed);
         }
-
 
         [Test]
         public void LoginWithUsernameAndPassword_Negative()
@@ -161,8 +159,5 @@ namespace Drips_p2
             chromeDriver.Close();
             chromeDriver.Quit();
         }
-
-
-        
     }
 }
