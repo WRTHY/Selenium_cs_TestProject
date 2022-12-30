@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Drips_p2.Pages
+namespace Selenium_TestProject_cs.Pages
 {
     public class HomePage
     {

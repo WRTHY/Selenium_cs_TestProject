@@ -6,9 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Drips_p2.Pages;
+using Selenium_TestProject_cs.Pages;
 
-namespace Drips_p2
+namespace Selenium_TestProject_cs
 {
     public class HelperMethods
     {

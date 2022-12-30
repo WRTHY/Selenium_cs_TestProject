@@ -6,7 +6,7 @@ using System.ComponentModel.Design;
 using OpenQA.Selenium.Support.UI;
 using System;
 
-namespace Drips_p2
+namespace Selenium_TestProject_cs
 {
     public class TestSuite : HelperMethods
     {
