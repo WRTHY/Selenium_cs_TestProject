@@ -25,7 +25,7 @@ namespace Selenium_TestProject_cs
             CreateUserPage createUserPage = new CreateUserPage(chromeDriver);
 
             //Nav to login page
-            homePage.clickSignIn();
+            homePage.clickCreateAccount();
             createUserPage.enterUserInformation(firstName, lastName, email, password, password);//same password for both boxes
             createUserPage.clickCreateAccountButton();
         }

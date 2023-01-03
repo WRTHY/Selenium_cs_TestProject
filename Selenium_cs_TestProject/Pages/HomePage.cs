@@ -19,12 +19,16 @@ namespace Selenium_TestProject_cs.Pages
 
         //fields
         IWebElement signInButton => chromeDriver.FindElement(By.LinkText("Sign In"));
+        IWebElement createAccountButton => chromeDriver.FindElement(By.LinkText("Create an Account"));
 
         public void clickSignIn()
         {
             signInButton.Click();
         }
 
+        public void clickCreateAccount() {
+            createAccountButton.Click();
+        }
 
     }
 }
