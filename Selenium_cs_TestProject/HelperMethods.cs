@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Selenium_TestProject_cs.Pages;
+using Selenium_cs_TestProject.Pages;
 
 namespace Selenium_TestProject_cs
 {
@@ -42,6 +43,8 @@ namespace Selenium_TestProject_cs
 
         public void helper_ViewCart(ChromeDriver chromeDriver)
         {
+            HomePage homePage = new HomePage(chromeDriver);
+
             IWebElement cartButton = chromeDriver.FindElement(By.CssSelector("a[class='action showcart']"));
             cartButton.Click();
 
@@ -75,9 +78,8 @@ namespace Selenium_TestProject_cs
 
         public void helper_SearchFunctionality(ChromeDriver chromeDriver, String searchQuery)
         {
-            IWebElement searchBar = chromeDriver.FindElement(By.XPath("//input[@id='search']"));
-            searchBar.SendKeys(searchQuery);
-            searchBar.SendKeys(Keys.Enter);
+            HeaderPage headerPage = new HeaderPage(chromeDriver);
+            headerPage.inputQueryAndSearch(searchQuery);
         }
 
         public void helper_RemoveItemFromCart(ChromeDriver chromeDriver, WebDriverWait wait)
